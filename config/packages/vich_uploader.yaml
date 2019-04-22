@@ -1,0 +1,51 @@
+vich_uploader:
+    db_driver: orm
+    mappings:
+        gallery:
+            uri_prefix: '%app.path.gallery%'
+            upload_destination: '%kernel.project_dir%/public%app.path.gallery%'
+            namer: Vich\UploaderBundle\Naming\OrignameNamer
+            delete_on_update : true
+            delete_on_remove : true
+        images:
+            uri_prefix: '%app.path.images%'
+            upload_destination: '%kernel.project_dir%/public%app.path.images%'
+            namer: Vich\UploaderBundle\Naming\OrignameNamer
+            inject_on_load: true
+            delete_on_update : true
+            delete_on_remove : true
+        # page_images:
+        #     uri_prefix: '%app.path.page_images%'
+        #     upload_destination: '%kernel.project_dir%/public%app.path.page_images%'
+        #     namer: Vich\UploaderBundle\Naming\OrignameNamer
+        #     inject_on_load: true
+        #     delete_on_update : true
+        #     delete_on_remove : true
+        # tour_images:
+        #     uri_prefix: '%app.path.tour_images%'
+        #     upload_destination: '%kernel.project_dir%/public%app.path.tour_images%'
+        #     namer: Vich\UploaderBundle\Naming\OrignameNamer
+        #     inject_on_load: true
+        #     delete_on_update : true
+        #     delete_on_remove : true
+        # beach_images:
+        #     uri_prefix: '%app.path.beach_images%'
+        #     upload_destination: '%kernel.project_dir%/public%app.path.beach_images%'
+        #     namer: Vich\UploaderBundle\Naming\OrignameNamer
+        #     inject_on_load: true
+        #     delete_on_update : true
+        #     delete_on_remove : true
+        # menu_images:
+        #     uri_prefix: '%app.path.menu_images%'
+        #     upload_destination: '%kernel.project_dir%/public%app.path.menu_images%'
+        #     namer: Vich\UploaderBundle\Naming\OrignameNamer
+        #     inject_on_load: true
+        #     delete_on_update : true
+        #     delete_on_remove : true
+        # wellness_images:
+        #     uri_prefix: '%app.path.wellness_images%'
+        #     upload_destination: '%kernel.project_dir%/public%app.path.wellness_images%'
+        #     namer: Vich\UploaderBundle\Naming\OrignameNamer
+        #     inject_on_load: true
+        #     delete_on_update : true
+        #     delete_on_remove : true

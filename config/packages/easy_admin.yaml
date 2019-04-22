@@ -1,0 +1,17 @@
+easy_admin:
+   site_name: 'api'
+   formats:
+      date:     'd.m.Y.'
+      time:     'H:i'
+      datetime: 'd.m.Y. H:i:s'  
+   list:
+      actions: ['delete', 'edit', 'list', 'new', 'search']
+   design:
+      color_scheme: 'dark'
+      menu: ['Animation', 'Tag']
+   entities:
+      - App\Entity\Animation
+      - App\Entity\Tag
+imports:
+  - { resource: easy_admin/ }
+

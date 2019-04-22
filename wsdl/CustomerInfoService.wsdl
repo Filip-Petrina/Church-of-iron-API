@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="CustomerInfoService" targetNamespace="http://www.siemens.com/md3/customerinfo/v6.5/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.siemens.com/md3/customerinfo/v6.5/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types>
+		<xs:schema elementFormDefault="qualified" targetNamespace="http://www.siemens.com/md3/customerinfo/v6.5/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:import namespace="http://schemas.datacontract.org/2004/07/Siemens.MD3.WebRequestManager.WSDL"/>
+			<xs:element name="GetCustomerInfo">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="customerInfoReq" nillable="true" type="q1:CustomerInfoReq" xmlns:q1="http://schemas.datacontract.org/2004/07/Siemens.MD3.WebRequestManager.WSDL"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetCustomerInfoResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="GetCustomerInfoResult" nillable="true" type="q2:CustomerInfoRes" xmlns:q2="http://schemas.datacontract.org/2004/07/Siemens.MD3.WebRequestManager.WSDL"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetCustomerInfoHistory">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="customerInfoHistoryReq" nillable="true" type="q3:CustomerInfoHistoryReq" xmlns:q3="http://schemas.datacontract.org/2004/07/Siemens.MD3.WebRequestManager.WSDL"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetCustomerInfoHistoryResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="GetCustomerInfoHistoryResult" nillable="true" type="q4:CustomerInfoHistoryRes" xmlns:q4="http://schemas.datacontract.org/2004/07/Siemens.MD3.WebRequestManager.WSDL"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+		<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:element name="anyType" nillable="true" type="xs:anyType"/>
+			<xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+			<xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+			<xs:element name="boolean" nillable="true" type="xs:boolean"/>
+			<xs:element name="byte" nillable="true" type="xs:byte"/>
+			<xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+			<xs:element name="decimal" nillable="true" type="xs:decimal"/>
+			<xs:element name="double" nillable="true" type="xs:double"/>
+			<xs:element name="float" nillable="true" type="xs:float"/>
+			<xs:element name="int" nillable="true" type="xs:int"/>
+			<xs:element name="long" nillable="true" type="xs:long"/>
+			<xs:element name="QName" nillable="true" type="xs:QName"/>
+			<xs:element name="short" nillable="true" type="xs:short"/>
+			<xs:element name="string" nillable="true" type="xs:string"/>
+			<xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+			<xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+			<xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+			<xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+			<xs:element name="char" nillable="true" type="tns:char"/>
+			<xs:simpleType name="char">
+				<xs:restriction base="xs:int"/>
+			</xs:simpleType>
+			<xs:element name="duration" nillable="true" type="tns:duration"/>
+			<xs:simpleType name="duration">
+				<xs:restriction base="xs:duration">
+					<xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+					<xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+					<xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="guid" nillable="true" type="tns:guid"/>
+			<xs:simpleType name="guid">
+				<xs:restriction base="xs:string">
+					<xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:attribute name="FactoryType" type="xs:QName"/>
+			<xs:attribute name="Id" type="xs:ID"/>
+			<xs:attribute name="Ref" type="xs:IDREF"/>
+		</xs:schema>
+		<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Siemens.MD3.WebRequestManager.WSDL" xmlns:tns="http://schemas.datacontract.org/2004/07/Siemens.MD3.WebRequestManager.WSDL" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+			<xs:complexType name="CustomerInfoReq">
+				<xs:complexContent mixed="false">
+					<xs:extension base="tns:BaseReq">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="UserData" nillable="true" type="tns:UserDataCustomerInfo"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="CustomerInfoReq" nillable="true" type="tns:CustomerInfoReq"/>
+			<xs:complexType name="BaseReq">
+				<xs:complexContent mixed="false">
+					<xs:extension base="tns:CommonReq">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="TransactionData" nillable="true" type="tns:TransactionDataExt"/>
+							<xs:element minOccurs="0" name="AuthData" nillable="true" type="tns:AuthData"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="BaseReq" nillable="true" type="tns:BaseReq"/>
+			<xs:complexType name="CommonReq">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="SubscriberRequestMask" nillable="true" type="xs:int"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="CommonReq" nillable="true" type="tns:CommonReq"/>
+			<xs:complexType name="TransactionDataExt">
+				<xs:complexContent mixed="false">
+					<xs:extension base="tns:TransactionData">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="AgentName" nillable="true" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="TransactionDataExt" nillable="true" type="tns:TransactionDataExt"/>
+			<xs:complexType name="TransactionData">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="ApplicationId" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="TransactionId" type="xs:long"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="TransactionData" nillable="true" type="tns:TransactionData"/>
+			<xs:complexType name="AuthData">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="PosContactPhone" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="PosEmployee" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="PosId" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="UserIpAddress" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="UserOTP" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="WpAgentCode" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="WpReturnURL" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="WpSalesChannel" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="WpUserId" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="WpUserRole" nillable="true" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="AuthData" nillable="true" type="tns:AuthData"/>
+			<xs:complexType name="UserDataCustomerInfo">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="MSISDN" nillable="true" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="UserDataCustomerInfo" nillable="true" type="tns:UserDataCustomerInfo"/>
+			<xs:complexType name="CustomerInfoRes">
+				<xs:complexContent mixed="false">
+					<xs:extension base="tns:BaseRes">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="ActiveEndDate" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="LanguageId" type="xs:int"/>
+							<xs:element minOccurs="0" name="OfferId" nillable="true" type="xs:string"/>
+							<xs:element minOccurs="0" name="NotLimitedAggr_FU_Balance" type="xs:long"/>
+							<xs:element minOccurs="0" name="OnPeakAccountID_FU_Balance" type="xs:long"/>
+							<xs:element minOccurs="0" name="PackageBalance" nillable="true" type="tns:ArrayOfPackageBalanceRes"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="CustomerInfoRes" nillable="true" type="tns:CustomerInfoRes"/>
+			<xs:complexType name="BaseRes">
+				<xs:complexContent mixed="false">
+					<xs:extension base="tns:CommonRes">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="ResponseStatus" nillable="true" type="tns:ResponseStatus"/>
+							<xs:element minOccurs="0" name="TransactionExpirationTimestamp" nillable="true" type="xs:dateTime"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="BaseRes" nillable="true" type="tns:BaseRes"/>
+			<xs:complexType name="CommonRes">
+				<xs:sequence/>
+			</xs:complexType>
+			<xs:element name="CommonRes" nillable="true" type="tns:CommonRes"/>
+			<xs:complexType name="ResponseStatus">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="StatusCode" type="xs:int"/>
+					<xs:element minOccurs="0" name="StatusMessage" nillable="true" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ResponseStatus" nillable="true" type="tns:ResponseStatus"/>
+			<xs:complexType name="ArrayOfPackageBalanceRes">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="PackageBalanceRes" nillable="true" type="tns:PackageBalanceRes"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ArrayOfPackageBalanceRes" nillable="true" type="tns:ArrayOfPackageBalanceRes"/>
+			<xs:complexType name="PackageBalanceRes">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="PackageId" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="PeriodicBonus_FU_ExpiryDate" type="xs:dateTime"/>
+					<xs:element minOccurs="0" name="PeriodicBonus_FU_Balance" type="xs:int"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="PackageBalanceRes" nillable="true" type="tns:PackageBalanceRes"/>
+			<xs:complexType name="CustomerInfoHistoryReq">
+				<xs:complexContent mixed="false">
+					<xs:extension base="tns:CustomerInfoReq">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string"/>
+							<xs:element minOccurs="0" name="TimestampFrom" nillable="true" type="xs:dateTime"/>
+							<xs:element minOccurs="0" name="TimestampTo" nillable="true" type="xs:dateTime"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="CustomerInfoHistoryReq" nillable="true" type="tns:CustomerInfoHistoryReq"/>
+			<xs:complexType name="CustomerInfoHistoryRes">
+				<xs:complexContent mixed="false">
+					<xs:extension base="tns:CustomerInfoRes">
+						<xs:sequence>
+							<xs:element minOccurs="0" name="HistoryRecords" nillable="true" type="tns:ArrayOfCustomerInfoHistoryRecord"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="CustomerInfoHistoryRes" nillable="true" type="tns:CustomerInfoHistoryRes"/>
+			<xs:complexType name="ArrayOfCustomerInfoHistoryRecord">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="CustomerInfoHistoryRecord" type="tns:CustomerInfoHistoryRecord"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="ArrayOfCustomerInfoHistoryRecord" nillable="true" type="tns:ArrayOfCustomerInfoHistoryRecord"/>
+			<xs:complexType name="CustomerInfoHistoryRecord">
+				<xs:annotation>
+					<xs:appinfo>
+						<IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="AgentName" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="Timestamp" type="xs:dateTime"/>
+					<xs:element minOccurs="0" name="ApplicationId" type="xs:int"/>
+					<xs:element minOccurs="0" name="ApplicationAlias" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="ActiveEndDate" nillable="true" type="xs:dateTime"/>
+					<xs:element minOccurs="0" name="LanguageId" nillable="true" type="xs:int"/>
+					<xs:element minOccurs="0" name="OfferId" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="NotLimitedAggr_FU_Balance" nillable="true" type="xs:long"/>
+					<xs:element minOccurs="0" name="OnPeakAccountID_FU_Balance" nillable="true" type="xs:long"/>
+					<xs:element minOccurs="0" name="TransactionStatus" nillable="true" type="xs:string"/>
+					<xs:element minOccurs="0" name="TransactionNumber" type="xs:long"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:element name="CustomerInfoHistoryRecord" nillable="true" type="tns:CustomerInfoHistoryRecord"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="ICustomerInfoService_GetCustomerInfo_InputMessage">
+		<wsdl:part element="tns:GetCustomerInfo" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ICustomerInfoService_GetCustomerInfo_OutputMessage">
+		<wsdl:part element="tns:GetCustomerInfoResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ICustomerInfoService_GetCustomerInfoHistory_InputMessage">
+		<wsdl:part element="tns:GetCustomerInfoHistory" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ICustomerInfoService_GetCustomerInfoHistory_OutputMessage">
+		<wsdl:part element="tns:GetCustomerInfoHistoryResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:portType name="ICustomerInfoService">
+		<wsdl:operation name="GetCustomerInfo">
+			<wsdl:input message="tns:ICustomerInfoService_GetCustomerInfo_InputMessage" wsaw:Action="http://www.siemens.com/md3/customerinfo/v6.5/ICustomerInfoService/GetCustomerInfo"/>
+			<wsdl:output message="tns:ICustomerInfoService_GetCustomerInfo_OutputMessage" wsaw:Action="http://www.siemens.com/md3/customerinfo/v6.5/ICustomerInfoService/GetCustomerInfoResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetCustomerInfoHistory">
+			<wsdl:input message="tns:ICustomerInfoService_GetCustomerInfoHistory_InputMessage" wsaw:Action="http://www.siemens.com/md3/customerinfo/v6.5/ICustomerInfoService/GetCustomerInfoHistory"/>
+			<wsdl:output message="tns:ICustomerInfoService_GetCustomerInfoHistory_OutputMessage" wsaw:Action="http://www.siemens.com/md3/customerinfo/v6.5/ICustomerInfoService/GetCustomerInfoHistoryResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="BasicHttpBinding_ICustomerInfoService" type="tns:ICustomerInfoService">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="GetCustomerInfo">
+			<soap:operation soapAction="http://www.siemens.com/md3/customerinfo/v6.5/ICustomerInfoService/GetCustomerInfo" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetCustomerInfoHistory">
+			<soap:operation soapAction="http://www.siemens.com/md3/customerinfo/v6.5/ICustomerInfoService/GetCustomerInfoHistory" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CustomerInfoService">
+		<wsdl:port binding="tns:BasicHttpBinding_ICustomerInfoService" name="BasicHttpBinding_ICustomerInfoService">
+			<soap:address location="http://192.168.1.250:1015/MD3OptionAdmin/CustomerInfoService.svc"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

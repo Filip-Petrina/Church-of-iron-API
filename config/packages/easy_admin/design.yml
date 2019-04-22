@@ -1,0 +1,7 @@
+easy_admin:
+  design:
+    assets:
+      js:
+        # - '/ckeditor5/ckeditor.js.map'
+        - '/ckeditor5/ckeditor.js'
+        - '/ckeditor5/mycustom.js'

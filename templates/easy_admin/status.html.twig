@@ -1,0 +1,22 @@
+{% extends '@EasyAdmin/default/new.html.twig' %}
+
+{% form_theme form _self %}
+
+{% block _employee_status_widget %}
+       <select>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+       </select> 
+      <script type="text/javascript">
+            $(document).ready(function () { 
+                $("#employee_status").on('change', function() {
+                    if ($('#employee_status').val() == 1) {
+                        $("#employee_quitAt").parent().parent().parent().hide();
+                    }
+                    else {
+                        $("#employee_quitAt").parent().parent().parent().show();
+                    }
+                })
+            });
+        </script>
+{% endblock  _employee_status_widget %}
