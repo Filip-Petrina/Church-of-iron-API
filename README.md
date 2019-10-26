@@ -1,35 +1,3 @@
-Za testiranje loyalty login-a (HISHotelMobAppLoginLoyalty) možete koristiti sljedeće podatke:
-LoyaltyID: 101580023188
-Pass: 123456789
-
-Primjer za metodu HISHotelMobAppLoginLoyalty:
-
-XML poruka zahtjeva:
-
-```
-   <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:lls="LLSoapNamespace">
-   <soapenv:Header>
-      <lls:ZaglavljeHIS>
-         <Username>nivas_app</Username>
-         <Password>llnivasapp123</Password>
-         <Database>matis1.world</Database>
-      </lls:ZaglavljeHIS>
-   </soapenv:Header>
-   <soapenv:Body>
-      <lls:HISHotelMobAppLoginLoyaltyUpit>
-         <LoyaltyID>123456789</LoyaltyID>
-         <Password>pass</Password>
-      </lls:HISHotelMobAppLoginLoyaltyUpit>
-   </soapenv:Body>
-</soapenv:Envelope>
-```
-
-
-Metodu HISHotelMobAppLoginRezervacija možete testirati sa:
-KodRezervacije - 1avavtdtje
-DatumDolaska – 09.10.2019.
-
-
 ### Common commands
 
 Brisanje doctrine cache-a

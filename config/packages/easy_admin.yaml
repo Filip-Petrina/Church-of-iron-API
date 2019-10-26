@@ -8,10 +8,11 @@ easy_admin:
       actions: ['delete', 'edit', 'list', 'new', 'search']
    design:
       color_scheme: 'dark'
-      menu: ['Animation', 'Tag']
+      menu: ['Exercise', 'Muscle', 'MuscleGroup']
    entities:
-      - App\Entity\Animation
-      - App\Entity\Tag
+      - App\Entity\Exercise
+      - App\Entity\Muscle
+      - App\Entity\MuscleGroup
 imports:
   - { resource: easy_admin/ }
 

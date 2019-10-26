@@ -1,0 +1,17 @@
+easy_admin:
+  entities:
+    Exercise:
+      class: App\Entity\Exercise
+      label: 'Exercise'
+      list:
+        fields:
+          - id
+          - name
+      form:
+        fields:
+          - { property: 'name', css_class: 'large' }
+          - { type: 'group', columns: 4, label: 'Image', help: 'Pick the image to represent the muscle' }
+          - { property: 'imageFile', type: 'vich_image', type_options: { required: false } }
+          - { type: 'group', columns: 4, label: 'Muscles', help: 'Assign the muscles this exercise targets' }
+          - { property: 'muscles', css_class: 'large', label: 'Muscles targeted' }
+

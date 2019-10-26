@@ -1,0 +1,58 @@
+-workout plan - (weekly)
+
+    -week 1:
+
+        -workout (monday) - active
+            -exercise step (plank)
+            -exercise step (break)
+            -exercise step (curls)
+        -workout (tuesday) - break
+        -workout (wednesday) - active
+            -exercise step (squats)
+            -exercise step (break)
+            -exercise step (dips)
+        -workout (thursday) - break
+        -workout (friday) - active
+            -exercise step (plank)
+            -exercise step (break)
+            -exercise step (curls)
+        -workout (saturady) - break
+        -workout (sunday) - break
+
+    -week2
+
+        -workout (monday) - active
+            -exercise step (squats)
+            -exercise step (break)
+            -exercise step (dips)
+        -workout (tuesday) - break
+        -workout (wednesday) - active
+            -exercise step (plank)
+            -exercise step (break)
+            -exercise step (curls)
+        -workout (thursday) - break
+        -workout (friday) - active
+            -exercise step (squats)
+            -exercise step (break)
+            -exercise step (dips)
+        -workout (saturady) - break
+        -workout (sunday) - break
+
+- exercise
+    - name
+    - description
+    - image
+    - typeExecution (timed, sets x reps)
+        - timed
+            - timer
+        - sets x reps
+            - sets
+            - reps
+            - weight
+    - type (cardio, flexibility, endurance, strength, warmup)
+    - muscles targeted (calves, biceps, shoulders, pecs)
+        - percentage by muscle group?
+
+- muscle
+    - name
+    - muscle group (legs, abs, arms, upper body, lower body)

@@ -20,25 +20,37 @@ trait TraitCommon
 {
     /**
      * @Groups({"page_tree"})
-     * @Gedmo\Slug(fields={"title"})
+     * @Gedmo\Slug(fields={"name"})
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $name;
+    private $slug;
 
     /**
      * @Groups({"page_tree"})
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $title;
+    private $name;
 
     /**
      * {@inheritdoc}
      */
     public function __toString()
     {
-        return is_string($this->getName()) ? $this->getName() : '';
+        return is_string($this->getSlug()) ? $this->getSlug() : '';
     }
 
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(?string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
 
     public function getName(): ?string
     {
@@ -48,18 +60,6 @@ trait TraitCommon
     public function setName(?string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getTitle(): ?string
-    {
-        return $this->title;
-    }
-
-    public function setTitle(?string $title): self
-    {
-        $this->title = $title;
 
         return $this;
     }

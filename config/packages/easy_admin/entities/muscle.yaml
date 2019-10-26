@@ -1,0 +1,18 @@
+easy_admin:
+  entities:
+    Muscle:
+      class: App\Entity\Muscle
+      label: 'Muscle'
+      list:
+        fields:
+          - id
+          - name
+      form:
+        fields:
+          - { property: 'name', css_class: 'large' }
+          - { property: 'description', css_class: 'awesome-ckeditor', type: 'textarea' }
+          - { type: 'group', columns: 4, label: 'Image', help: 'Pick the image to represent the muscle' }
+          - { property: 'imageFile', type: 'vich_image', type_options: { required: false } }
+          - { type: 'group', columns: 4, label: 'Muscle group', help: 'Connect the muscle to various muscle groups' }
+          - { property: 'muscleGroups', css_class: 'large', label: 'Muscle groups' }
+
