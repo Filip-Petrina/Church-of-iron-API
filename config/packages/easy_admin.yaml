@@ -7,7 +7,6 @@ easy_admin:
    list:
       actions: ['delete', 'edit', 'list', 'new', 'search']
    design:
-      color_scheme: 'dark'
       menu: ['Exercise', 'Muscle', 'MuscleGroup']
    entities:
       - App\Entity\Exercise

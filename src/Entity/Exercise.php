@@ -46,6 +46,37 @@ class Exercise
      */
     private $muscles;
 
+    /**
+     * @ORM\Column(type="smallint", nullable=true, options={"default":0})
+     */
+    private $type;
+
+    /**
+     * @ORM\Column(type="time", nullable=true)
+     */
+    private $time;
+
+    /**
+     * @ORM\Column(type="smallint", nullable=true)
+     */
+    private $sets;
+
+    /**
+     * @ORM\Column(type="smallint", nullable=true)
+     */
+ 
+     private $reps;
+    /**
+     * @ORM\Column(type="time", nullable=true)
+     */
+    private $breakBetweenSets;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $weight;
+
+
     public function __construct()
     {
         $this->muscles = new ArrayCollection();
@@ -78,6 +109,78 @@ class Exercise
         if ($this->muscles->contains($muscle)) {
             $this->muscles->removeElement($muscle);
         }
+
+        return $this;
+    }
+
+    public function getType(): ?int
+    {
+        return $this->type;
+    }
+
+    public function setType(int $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    public function getTime(): ?\DateTimeInterface
+    {
+        return $this->time;
+    }
+
+    public function setTime(?\DateTimeInterface $time): self
+    {
+        $this->time = $time;
+
+        return $this;
+    }
+
+    public function getSets(): ?int
+    {
+        return $this->sets;
+    }
+
+    public function setSets(?int $sets): self
+    {
+        $this->sets = $sets;
+
+        return $this;
+    }
+
+    public function getReps(): ?int
+    {
+        return $this->reps;
+    }
+
+    public function setReps(?int $reps): self
+    {
+        $this->reps = $reps;
+
+        return $this;
+    }
+
+    public function getWeight(): ?float
+    {
+        return $this->weight;
+    }
+
+    public function setWeight(float $weight): self
+    {
+        $this->weight = $weight;
+
+        return $this;
+    }
+
+    public function getBreakBetweenSets(): ?\DateTimeInterface
+    {
+        return $this->breakBetweenSets;
+    }
+
+    public function setBreakBetweenSets(?\DateTimeInterface $breakBetweenSets): self
+    {
+        $this->breakBetweenSets = $breakBetweenSets;
 
         return $this;
     }

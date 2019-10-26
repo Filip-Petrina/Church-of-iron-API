@@ -10,6 +10,15 @@ easy_admin:
       form:
         fields:
           - { property: 'name', css_class: 'large' }
+          - { property: 'type', css_class: 'large', type: 'choice', type_options: { choices: { 'Pick a type': 0, 'Break': 1, 'Timed': 2, 'Repetition': 3 } }  }
+          - { type: 'group', columns: 4, label: 'Timed', help: 'Set duration of your exercise' }
+          - { property: 'time' }
+          - { type: 'group', columns: 4, label: 'Sets + reps', help: 'Set the sets and reps' }
+          - { property: 'sets' }
+          - { property: 'reps' }
+          - { property: 'breakBetweenSets', label: 'Break between sets' }
+          - { type: 'group', columns: 4, label: 'Extra weight', help: 'Set if the exercise includes extra weight' }
+          - { property: 'weight' }
           - { type: 'group', columns: 4, label: 'Image', help: 'Pick the image to represent the muscle' }
           - { property: 'imageFile', type: 'vich_image', type_options: { required: false } }
           - { type: 'group', columns: 4, label: 'Muscles', help: 'Assign the muscles this exercise targets' }

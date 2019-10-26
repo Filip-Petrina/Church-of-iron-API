@@ -43,11 +43,13 @@
     - description
     - image
     - typeExecution (timed, sets x reps)
+        - break
         - timed
             - timer
         - sets x reps
             - sets
             - reps
+            - break between sets
             - weight
     - type (cardio, flexibility, endurance, strength, warmup)
     - muscles targeted (calves, biceps, shoulders, pecs)
