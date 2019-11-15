@@ -1,0 +1,3 @@
+how do we prevent creating repeat exercise entities when creating exercises and workout sessions?
+exercises with the same name should not be repeated?
+how do we know if it is a PUT or POST request on an entity?

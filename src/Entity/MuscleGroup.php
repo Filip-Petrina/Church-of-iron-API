@@ -48,6 +48,11 @@ class MuscleGroup
      */
     private $muscles;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $description;
+
     public function __construct()
     {
         $this->muscles = new ArrayCollection();
@@ -82,6 +87,18 @@ class MuscleGroup
             $this->muscles->removeElement($muscle);
             $muscle->removeMuscleGroup($this);
         }
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

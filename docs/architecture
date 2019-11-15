@@ -32,9 +32,10 @@
             -exercise step (curls)
         -workout (thursday) - break
         -workout (friday) - active
-            -exercise step (squats)
-            -exercise step (break)
+            -exercise step (squats) - repetition 5x5
+            -exercise step (break) - timed 5min
             -exercise step (dips)
+            -exercise step (break) - timed 5min
         -workout (saturady) - break
         -workout (sunday) - break
 
@@ -42,8 +43,9 @@
     - name
     - description
     - image
-    - typeExecution (timed, sets x reps)
+    - typeExecution (timed, sets x reps, break)
         - break
+            - timer
         - timed
             - timer
         - sets x reps

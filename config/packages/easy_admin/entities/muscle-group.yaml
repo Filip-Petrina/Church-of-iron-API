@@ -10,6 +10,7 @@ easy_admin:
       form:
         fields:
           - { property: 'name', css_class: 'large' }
+          - { property: 'description', css_class: 'large' }
           - { type: 'group', columns: 4, label: 'Image', help: 'Pick the image to represent the muscle group' }
           - { property: 'imageFile', type: 'vich_image', type_options: { required: false } }
           - { type: 'group', columns: 4, label: 'Muscles', help: 'Pick the muscles that belong to this muscle group' }
